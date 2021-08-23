@@ -1,5 +1,5 @@
 -- Database: alura
-
+-- https://www.postgresql.org/docs/12/sql-altertable.html
 -- DROP DATABASE alura;
 
 CREATE DATABASE alura -- nome do banco 
@@ -55,3 +55,29 @@ insert into testeC values ('a','b'); -- ERROR:  duplicate key value violates uni
 insert into testeC values ('a','c')
 
 
+select * from  testeC
+-- alterando a tabela
+
+alter table testeC rename to testeA
+
+select * from  testeA
+
+alter table testeA rename colunaA to colunaAA;
+alter table testeA rename colunaB to colunaBB;
+
+select * from  testeA
+
+
+--Vimos a diferença entre comandos DDL e DML.
+
+		  	CREATE
+		  	ALTER
+	  		DROP
+		DDL  -- serve para  
+SQL   
+
+	  	DML -- serve para manipular informações 
+			insert
+	  		update
+			delete 
+			select 
