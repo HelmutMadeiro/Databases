@@ -23,3 +23,41 @@ select $1+ $2;
 
 
 select soma_dois_numerossn (2,4);
+
+
+create table teste (nome varchar(255)not null);
+
+create or replace function criateste(nome varchar) returns varchar as '
+insert into teste (nome) values (criateste.nome);
+select nome;'
+language sql;
+
+select criateste('Helmut');
+select criateste('Debora');
+select criateste('Giovana');
+select criateste('Luana');
+
+select  * from teste
+
+-- sem retorno
+create or replace function criateste2(nome varchar) returns void as '
+insert into teste (nome) values (criateste2.nome);'
+language sql;
+
+select criateste2('Debora');
+select criateste2('Giovana');
+select criateste2('Luana');
+
+select  * from teste
+
+-- substituindo aspas pelo dolar
+create or replace function criateste3(nome varchar) returns void as 
+$$
+insert into teste (nome) values ('Cassio');
+$$
+language sql;
+
+select criateste3('');
+
+select  * from teste
+
